@@ -264,6 +264,7 @@ id regionAsJSON(MKCoordinateRegion region) {
 - (void)didPrepareMap {
   if (_didCallOnMapReady) return;
   _didCallOnMapReady = true;
+    self.settings.allowScrollGesturesDuringRotateOrZoom = NO;
   if (self.onMapReady) self.onMapReady(@{});
 }
 
