@@ -221,6 +221,23 @@ For Android: LocalTile is still just overlay over original map tiles. It means t
 
 See [OSM Wiki](https://wiki.openstreetmap.org/wiki/Category:Tile_downloading) for how to download tiles for offline usage.
 
+### Overlaying other components on the map
+
+Place components you that wish to overlay `MapView` underneath the `MapView` closing tag. Absolutely position these elements.
+
+```jsx
+render() {
+  return (
+    <MapView
+      region={this.state.region}
+    />
+    <OverlayComponent
+      style={{position: “absolute”, bottom: 50}}
+    />
+  );
+}
+```
+
 ### Customizing the map style
 
 Create the json object, or download a generated one from the [google style generator](https://mapstyle.withgoogle.com/).
@@ -254,7 +271,7 @@ import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
 
 Then add the AirGoogleMaps directory:
 
-https://github.com/airbnb/react-native-maps/blob/1e71a21f39e7b88554852951f773c731c94680c9/docs/installation.md#ios
+https://github.com/react-native-community/react-native-maps/blob/1e71a21f39e7b88554852951f773c731c94680c9/docs/installation.md#ios
 
 An unofficial step-by-step guide is also available at https://gist.github.com/heron2014/e60fa003e9b117ce80d56bb1d5bfe9e0
 
@@ -264,7 +281,7 @@ To run examples:
 
 ```bash
 npm i
-npm start 
+npm start
 
 #Android
 npm run run:android
@@ -396,6 +413,12 @@ Markers are draggable, and emit continuous drag events to update other UI during
 Enable lite mode on Android with `liteMode` prop. Ideal when having multiple maps in a View or ScrollView.
 
 ![](http://i.giphy.com/qZ2lAf18s89na.gif)
+
+### On Poi Click (Google Maps Only)
+
+Poi are clickable, you can catch the event to get its information (usually to get the full detail from Google Place using the placeId).
+
+![](https://media.giphy.com/media/3480VsCKnHr31uCLU3/giphy.gif)
 
 ### Animated Region
 
