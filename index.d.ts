@@ -175,7 +175,8 @@ declare module "react-native-maps" {
         followsUserLocation?: boolean;
         showsPointsOfInterest?: boolean;
         showsCompass?: boolean;
-        zoomEnabled?: boolean;
+				zoomEnabled?: boolean;
+				enableScrollGesturesDuringRotateOrZoom?: boolean;
         zoomControlEnabled?: boolean;
         rotateEnabled?: boolean;
         cacheEnabled?: boolean;

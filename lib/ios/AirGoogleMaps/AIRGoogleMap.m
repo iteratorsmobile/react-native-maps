@@ -264,7 +264,8 @@ id regionAsJSON(MKCoordinateRegion region) {
 - (void)didPrepareMap {
   if (_didCallOnMapReady) return;
   _didCallOnMapReady = true;
-    self.settings.allowScrollGesturesDuringRotateOrZoom = NO;
+	    // self.settings.allowScrollGesturesDuringRotateOrZoom = YES;
+
   if (self.onMapReady) self.onMapReady(@{});
 }
 
@@ -400,6 +401,14 @@ id regionAsJSON(MKCoordinateRegion region) {
 
 - (BOOL)zoomEnabled {
   return self.settings.zoomGestures;
+}
+
+- (void)setEnableScrollGesturesDuringRotateOrZoom:(BOOL)enableScrollGesturesDuringRotateOrZoom {
+  self.settings.allowScrollGesturesDuringRotateOrZoom = enableScrollGesturesDuringRotateOrZoom;
+}
+
+- (BOOL)enableScrollGesturesDuringRotateOrZoom {
+  return self.settings.allowScrollGesturesDuringRotateOrZoom;
 }
 
 - (void)setRotateEnabled:(BOOL)rotateEnabled {
