@@ -1,12 +1,12 @@
-declare module "react-native-maps" {
-  import * as React from "react";
+declare module 'react-native-maps' {
+  import * as React from 'react';
   import {
     Animated,
     ImageRequireSource,
     ImageURISource,
     NativeSyntheticEvent,
-    ViewProperties
-  } from "react-native";
+    ViewProperties,
+  } from 'react-native';
 
   export interface Region {
     latitude: number;
@@ -42,8 +42,8 @@ declare module "react-native-maps" {
       }
     > {}
 
-  export type LineCapType = "butt" | "round" | "square";
-  export type LineJoinType = "miter" | "round" | "bevel";
+  export type LineCapType = 'butt' | 'round' | 'square';
+  export type LineJoinType = 'miter' | 'round' | 'bevel';
 
   // =======================================================================
   //  AnimatedRegion
@@ -106,11 +106,11 @@ declare module "react-native-maps" {
     /** __iOS only__, optional region to render */
     region?: Region;
     /** image formats, defaults to 'png' */
-    format?: "png" | "jpg";
+    format?: 'png' | 'jpg';
     /** image quality: 0..1 (only relevant for jpg, default: 1) */
     quality?: number;
     /** result types, defaults to 'file' */
-    result?: "file" | "base64";
+    result?: 'file' | 'base64';
   }
 
   /**
@@ -170,15 +170,15 @@ declare module "react-native-maps" {
     extends NativeSyntheticEvent<{ markers: KmlMarker[] }> {}
 
   type MapTypes =
-    | "standard"
-    | "satellite"
-    | "hybrid"
-    | "terrain"
-    | "none"
-    | "mutedStandard";
+    | 'standard'
+    | 'satellite'
+    | 'hybrid'
+    | 'terrain'
+    | 'none'
+    | 'mutedStandard';
 
   export interface MapViewProps extends ViewProperties {
-    provider?: "google" | null;
+    provider?: 'google' | null;
     customMapStyle?: MapStyleElement[];
     customMapStyleString?: string;
     showsUserLocation?: boolean;
@@ -190,6 +190,7 @@ declare module "react-native-maps" {
     zoomEnabled?: boolean;
     zoomTapEnabled?: boolean;
     zoomControlEnabled?: boolean;
+    enableScrollGesturesDuringRotateOrZoom?: boolean;
     rotateEnabled?: boolean;
     cacheEnabled?: boolean;
     loadingEnabled?: boolean;
@@ -226,15 +227,15 @@ declare module "react-native-maps" {
     onPanDrag?: (event: MapEvent) => void;
     onPoiClick?: (event: MapEvent<{ placeId: string; name: string }>) => void;
     onMarkerPress?: (
-      event: MapEvent<{ action: "marker-press"; id: string }>
+      event: MapEvent<{ action: 'marker-press'; id: string }>
     ) => void;
     onMarkerSelect?: (
-      event: MapEvent<{ action: "marker-select"; id: string }>
+      event: MapEvent<{ action: 'marker-select'; id: string }>
     ) => void;
     onMarkerDeselect?: (
-      event: MapEvent<{ action: "marker-deselect"; id: string }>
+      event: MapEvent<{ action: 'marker-deselect'; id: string }>
     ) => void;
-    onCalloutPress?: (event: MapEvent<{ action: "callout-press" }>) => void;
+    onCalloutPress?: (event: MapEvent<{ action: 'callout-press' }>) => void;
     onMarkerDragStart?: (event: MapEvent) => void;
     onMarkerDrag?: (event: MapEvent) => void;
     onMarkerDragEnd?: (event: MapEvent) => void;
@@ -299,14 +300,14 @@ declare module "react-native-maps" {
     tracksViewChanges?: boolean;
     tracksInfoWindowChanges?: boolean;
     stopPropagation?: boolean;
-    onPress?: (event: MapEvent<{ action: "marker-press"; id: string }>) => void;
+    onPress?: (event: MapEvent<{ action: 'marker-press'; id: string }>) => void;
     onSelect?: (
-      event: MapEvent<{ action: "marker-select"; id: string }>
+      event: MapEvent<{ action: 'marker-select'; id: string }>
     ) => void;
     onDeselect?: (
-      event: MapEvent<{ action: "marker-deselect"; id: string }>
+      event: MapEvent<{ action: 'marker-deselect'; id: string }>
     ) => void;
-    onCalloutPress?: (event: MapEvent<{ action: "callout-press" }>) => void;
+    onCalloutPress?: (event: MapEvent<{ action: 'callout-press' }>) => void;
     onDragStart?: (event: MapEvent) => void;
     onDrag?: (event: MapEvent) => void;
     onDragEnd?: (event: MapEvent) => void;
@@ -344,7 +345,7 @@ declare module "react-native-maps" {
 
   export interface MapCalloutProps extends ViewProperties {
     tooltip?: boolean;
-    onPress?: (event: MapEvent<{ action: "callout-press" }>) => void;
+    onPress?: (event: MapEvent<{ action: 'callout-press' }>) => void;
   }
 
   export class Callout extends React.Component<MapCalloutProps, any> {}
@@ -354,7 +355,7 @@ declare module "react-native-maps" {
   // =======================================================================
 
   export interface MapCalloutSubviewProps extends ViewProperties {
-    onPress?: (event: MapEvent<{ action: "callout-inside-press" }>) => void;
+    onPress?: (event: MapEvent<{ action: 'callout-inside-press' }>) => void;
   }
 
   export class CalloutSubview extends React.Component<
@@ -493,5 +494,5 @@ declare module "react-native-maps" {
   };
 
   export const PROVIDER_DEFAULT: null;
-  export const PROVIDER_GOOGLE: "google";
+  export const PROVIDER_GOOGLE: 'google';
 }

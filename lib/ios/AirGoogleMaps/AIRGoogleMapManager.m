@@ -75,6 +75,7 @@ RCT_EXPORT_VIEW_PROPERTY(showsCompass, BOOL)
 //RCT_EXPORT_VIEW_PROPERTY(showsScale, BOOL)  // Not supported by GoogleMaps
 RCT_EXPORT_VIEW_PROPERTY(showsTraffic, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(zoomEnabled, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(enableScrollGesturesDuringRotateOrZoom, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(rotateEnabled, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(scrollEnabled, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(pitchEnabled, BOOL)
