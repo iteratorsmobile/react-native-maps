@@ -508,6 +508,12 @@ public class AirMapView extends MapView implements GoogleMap.InfoWindowAdapter,
     }
   }
 
+  public void setEnableScrollGesturesDuringRotateOrZoom(boolean enableScrollGesturesDuringRotateOrZoom) {
+    if (hasPermissions()) {
+      map.getUiSettings().setScrollGesturesEnabledDuringRotateOrZoom(enableScrollGesturesDuringRotateOrZoom);
+    }
+  }
+
   public void setCacheEnabled(boolean cacheEnabled) {
     this.cacheEnabled = cacheEnabled;
     this.cacheView();

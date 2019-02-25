@@ -162,6 +162,11 @@ public class AirMapManager extends ViewGroupManager<AirMapView> {
     view.setToolbarEnabled(toolbarEnabled);
   }
 
+  @ReactProp(name = "enableScrollGesturesDuringRotateOrZoom")
+  public void setEnableScrollGesturesDuringRotateOrZoom(AirMapView view, boolean enableScrollGesturesDuringRotateOrZoom) {
+    view.setEnableScrollGesturesDuringRotateOrZoom(enableScrollGesturesDuringRotateOrZoom);
+  }
+
   // This is a private prop to improve performance of panDrag by disabling it when the callback
   // is not set
   @ReactProp(name = "handlePanDrag", defaultBoolean = false)
